@@ -119,14 +119,22 @@
           <div class="box">
             <div class="box-header">
                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
-               Tambahkan
+               <TABLE>Tambahkan</TABLE>
               </button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example2" class="table table-bordered table-striped">
+                <?php
+                  include 'koneksi.php';
+
+                  $sql = "SELECT * From data_ibu_hamil";
+                  $query = mysqli_query($koneksi, $sql);
+                  $no = 0
+                ?>
                 <thead>
                 <tr>
+                  <th>No</th>
                   <th>Nama</th>
                   <th>Tanggal Lahir</th>
                   <th>Alamat</th>
@@ -137,11 +145,16 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td>Asih Mimintarsih</td>
-                  <td>28-11-1995</td>
-                  <td>Teluk Cempako</td>
-                  <td>Rajni</td>
-                  <td>082289973232</td>
+                  <?php
+                    while($data = mysqli_fetch_array($query)) {
+                      $no++
+                  ?>
+                  <td><?= $no ?></td>
+                  <td><?= $data['nama'] ?></td>
+                  <td><?= $data['tgl_lahir'] ?></td>
+                  <td><?= $data['alamat'] ?></td>
+                  <td><?= $data['nama_suami'] ?></td>
+                  <td><?= $data['no_hp'] ?></td>
                   <td>
                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit">
                       Edit
@@ -151,41 +164,10 @@
                     </button>
                   </td>
                 </tr>
+                <?php
+                }
+                ?>
                 </tbody>
-                 </thead>
-                <tbody>
-                <tr>
-                  <td>Aziana</td>
-                  <td>10-05-1999</td>
-                  <td>Teluk Cempako</td>
-                  <td>Robi</td>
-                  <td>082235752432</td>
-                  <td>
-                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit">
-                      Edit
-                    </button>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">
-                      Hapus
-                    </button>
-                  </td>
-                </tr>
-                 </thead>
-                <tbody>
-                <tr>
-                  <td>Widia Karlina</td>
-                  <td>27-06-2000</td>
-                  <td>Teluk Cempako</td>
-                  <td>Edo</td>
-                  <td>081278079531</td>
-                  <td>
-                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit">
-                      Edit
-                    </button>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">
-                      Hapus
-                    </button>
-                  </td>
-                </tr>
               </table>
             </div>
             <!-- /.box-body -->

@@ -113,7 +113,7 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content">   
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
@@ -219,23 +219,30 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Bayi</label>
-                  <input type="text" class="form-control" name="NamaBayi" placeholder="Enter Nama Bayi">
+                  <input type="text" class="form-control" name="nama_bayi" placeholder="Enter Nama Bayi">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Jenis Kelamin</label>
-                  <input type="number" class="form-control" name="JenisKelamin" placeholder="Enter Jenis Kelamin">
+                  <select class="form-control" name="jenis_kelamin">
+                    <option value='L'>Laki - Laki</option>
+                    <option value='P'>Perempuan</option>
+                  </select>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Tanggal Lahir</label>
-                  <input type="number" class="form-control" name="TanggalLahir" placeholder="Enter Tanggal Lahir">
+                  <input type="date" class="form-control" name="tanggal_lahir" placeholder="Enter Tanggal Lahir">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">BB Lahir</label>
-                  <input type="text" class="form-control" name="BBLahir" placeholder="Enter BB Lahir">
+                  <input type="number" class="form-control" name="bb_lahir" placeholder="Enter BB Lahir">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">TB Lahir</label>
+                  <input type="number" class="form-control" name="tb_lahir" placeholder="Enter TB Lahir">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Orangtua</label>
-                  <input type="text" class="form-control" name="NamaOrangtua" placeholder="Enter Nama Orangtua">
+                  <input type="text" class="form-control" name="nama_ortu" placeholder="Enter Nama Orangtua">
                 </div>
               </div>
               <!-- /.box-body -->

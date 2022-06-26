@@ -85,7 +85,7 @@
         </li>
         <li class="treeview">
           <a href="data-vaksin.html">
-            <i class="fa fa-map-o"></i> <span>Data Vaksin</span>
+            <i class="fa fa-map-o"></i> <span>Data Posyandu</span>
           </a>
         </li>
         <li class="treeview">
@@ -108,51 +108,68 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Vaksin
+        Data Posyandu
       </h1>
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content">   
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default">
-               Tambahkan
+               <TABLE>Tambahkan</TABLE>
               </button>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example2" class="table table-bordered table-striped">
+                <?php
+                  include 'koneksi.php';
+
+                  $sql = "SELECT * FROM data_posyandu";
+                  $query = mysqli_query($koneksi, $sql);
+                  $no = 0
+                ?>
                 <thead>
                 <tr>
+                  <th>No</th>
                   <th>Nama Bayi</th>
-                  <th>Jenis Kelamin</th>
-                  <th>Tanggal Lahir</th>
+                  <th>BB</th>
+                  <th>TB</th>
                   <th>Jenis Vaksin</th>
-                  <th>Nama Ortu</th>
+                  <th>Tanggal</th>
+                  <th>Keterangan</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>M Ichsan</td>
-                  <td>Laki-laki</td>
-                  <td>10-02-2021</td>
-                  <td>BCG</td>
-                  <td>Ichsan/Tina</td>
+                  <?php
+                    while($data = mysqli_fetch_array($query)) {
+                      $no++
+                  ?>
+                  <td><?= $no ?></td>
+                  <td><?= $data['nama_bayi'] ?></td>
+                  <td><?= $data['bb'] ?></td>
+                  <td><?= $data['tb'] ?></td>
+                  <td><?= $data['jenis_vaksin'] ?></td>
+                  <td><?= $data['tgl'] ?></td>
+                  <td><?= $data['keterangan'] ?></td>
                   <td>
                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit">
                       Edit
                     </button>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">
+                    <a href="hapus-data-posyandu.php?id=<?php echo $data['id']?>" class="btn btn-danger">
                       Hapus
-                    </button>
+                    </a>
                   </td>
                 </tr>
+                <?php
+                }
+                ?>
                 </tbody>
-                 </thead>
               </table>
             </div>
             <!-- /.box-body -->
@@ -185,31 +202,35 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Form Pendaftaran Vaksin</h4>
+                <h4 class="modal-title">Form Pendaftaran Data Posyandu</h4>
               </div>
               <div class="modal-body">
                <!-- form start -->
-            <form action="" method="post">
+            <form action="input-data-bayi-proses.php" method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Bayi</label>
-                  <input type="text" class="form-control" name="NamaBayi" placeholder="Enter Nama Bayi">
+                  <input type="text" class="form-control" name="nama_bayi" placeholder="Enter Nama Bayi">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Jenis Kelamin</label>
-                  <input type="number" class="form-control" name="JenisKelamin" placeholder="Enter Jenis Kelamin">
+                  <label for="exampleInputEmail1">BB</label>
+                  <input type="text" class="form-control" name="bb" placeholder="Enter BB">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Tanggal Lahir</label>
-                  <input type="number" class="form-control" name="TanggalLahir" placeholder="Enter Tanggal Lahir">
+                  <label for="exampleInputEmail1">TB</label>
+                  <input type="text" class="form-control" name="tb" placeholder="Enter TB">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Jenis Vaksin</label>
-                  <input type="text" class="form-control" name="JenisVaksin" placeholder="Enter Jenis Vaksin">
+                  <input type="number" class="form-control" name="jenis_vaksin" placeholder="Enter Jenis Vaksin">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Nama Orangtua</label>
-                  <input type="text" class="form-control" name="NamaOrangtua" placeholder="Enter Nama Orangtua">
+                  <label for="exampleInputEmail1">Tanggal</label>
+                  <input type="date" class="form-control" name="tanggal" placeholder="Enter Tanggal">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Keterangan</label>
+                  <input type="text" class="form-control" name="keterangan" placeholder="Enter Keterangan">
                 </div>
               </div>
               <!-- /.box-body -->

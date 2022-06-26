@@ -92,7 +92,7 @@
         </li>
         <li class="treeview">
           <a href="data-vaksin.html">
-            <i class="fa fa-map-o"></i> <span>Data Vaksin</span>
+            <i class="fa fa-map-o"></i> <span>Data Posyandu</span>
           </a>
         </li>
         <li class="treeview">

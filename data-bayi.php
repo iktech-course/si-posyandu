@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Data Tables</title>
+  <title>Data Bayi</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -74,27 +74,27 @@
           </a>
         </li>
         <li class="treeview">
-          <a href="data-bayi.html">
+          <a href="data-bayi.php">
             <i class="fa fa-map-o"></i> <span>Data Bayi</span>
           </a>
         </li>
         <li class="treeview">
-          <a href="data-ibu-hamil.html">
+          <a href="data-ibu-hamil.php">
             <i class="fa fa-map-o"></i> <span>Data Ibu Hamil</span>
           </a>
         </li>
         <li class="treeview">
-          <a href="data-vaksin.html">
+          <a href="data-posyandu.php">
             <i class="fa fa-map-o"></i> <span>Data Posyandu</span>
           </a>
         </li>
         <li class="treeview">
-            <a href="#">
+            <a href="laporan.php">
             <i class="fa fa-map-marker"></i> <span>Laporan</span>
           </a>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="login.php">
             <i class="fa fa-user-times"></i> <span>Logout</span>
           </a>
         </li>
@@ -167,7 +167,7 @@
                   <td><?= $data['tb_lahir'] ?></td>
                   <td><?= $data['nama_ortu'] ?></td>
                   <td>
-                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit<?= $data['id'] ?>">
                       Edit
                     </button>
                     <a href="hapus-data-bayi.php?id=<?php echo $data['id']?>" class="btn btn-danger">
@@ -175,6 +175,63 @@
                     </a>
                   </td>
                 </tr>
+                <div class="modal fade" id="modal-edit<?php echo $data['id']; ?>">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Edit Data Bayi</h4>
+                      </div>
+                      <?php
+                            $id = $data['id'];
+                            $query_data = mysqli_query($koneksi, "SELECT * FROM data_bayi WHERE id = $id");
+                            $baris = mysqli_fetch_array($query_data);
+
+                          ?>
+                          <div class="modal-body">
+                          <!-- form start -->
+            <form action="input-data-bayi-proses.php" method="post">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nama Bayi</label>
+                  <input type="text" class="form-control" name="nama_bayi" placeholder="Enter Nama Bayi">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Jenis Kelamin</label>
+                  <select class="form-control" name="jenis_kelamin">
+                    <option value='L'>Laki - Laki</option>
+                    <option value='P'>Perempuan</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Tanggal Lahir</label>
+                  <input type="date" class="form-control" name="tanggal_lahir" placeholder="Enter Tanggal Lahir">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">BB Lahir</label>
+                  <input type="number" class="form-control" name="bb_lahir" placeholder="Enter BB Lahir">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">TB Lahir</label>
+                  <input type="number" class="form-control" name="tb_lahir" placeholder="Enter TB Lahir">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nama Orangtua</label>
+                  <input type="text" class="form-control" name="nama_ortu" placeholder="Enter Nama Orangtua">
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
                 <?php
                 }
                 ?>

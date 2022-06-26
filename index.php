@@ -1,9 +1,17 @@
+<?php
+  include("koneksi.php");
+
+  $query = mysqli_query($koneksi,"SELECT * FROM admin");
+  $data = mysqli_fetch_array($query);
+
+  ?>
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
+  <title>Beranda</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -81,27 +89,27 @@
           </a>
         </li>
         <li class="treeview">
-          <a href="data-bayi.html">
+          <a href="data-bayi.php">
             <i class="fa fa-map-o"></i> <span>Data Bayi</span>
           </a>
         </li>
         <li class="treeview">
-          <a href="data-ibu-hamil.html">
+          <a href="data-ibu-hamil.php">
             <i class="fa fa-map-o"></i> <span>Data Ibu Hamil</span>
           </a>
         </li>
         <li class="treeview">
-          <a href="data-vaksin.html">
+          <a href="data-posyandu.php">
             <i class="fa fa-map-o"></i> <span>Data Posyandu</span>
           </a>
         </li>
         <li class="treeview">
-            <a href="#">
+            <a href="#laporan.php">
             <i class="fa fa-map-marker"></i> <span>Laporan</span>
           </a>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="login.php">
             <i class="fa fa-user-times"></i> <span>Logout</span>
           </a>
         </li>
@@ -170,7 +178,7 @@
             <div class="inner">
               <h3>4</h3>
 
-              <p>Data Vaksin</p>
+              <p>Data Posyandu</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>

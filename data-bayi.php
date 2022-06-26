@@ -40,7 +40,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Admin</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -54,8 +54,8 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              
+              <span class="hidden-xs">Elsi</span>
             </a>
           </li>
         </ul>
@@ -170,9 +170,9 @@
                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit">
                       Edit
                     </button>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">
+                    <a href="hapus-data-bayi.php?id=<?php echo $data['id']?>" class="btn btn-danger">
                       Hapus
-                    </button>
+                    </a>
                   </td>
                 </tr>
                 <?php
@@ -196,7 +196,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2021 <a href="https://adminlte.io">Elsi Yuni Dita</a>.</strong>
+    <strong>Copyright &copy; 2022 <a href="https://adminlte.io">Elsi Yuni Dita</a>.</strong>
   </footer>
 
   <!-- Add the sidebar's background. This div must be placed
@@ -215,7 +215,7 @@
               </div>
               <div class="modal-body">
                <!-- form start -->
-            <form action="" method="post">
+            <form action="input-data-bayi-proses.php" method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Bayi</label>

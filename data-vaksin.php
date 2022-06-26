@@ -40,7 +40,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Admin</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -54,8 +54,8 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              
+              <span class="hidden-xs">Elsi</span>
             </a>
           </li>
         </ul>
@@ -130,18 +130,18 @@
                   <th>Nama Bayi</th>
                   <th>Jenis Kelamin</th>
                   <th>Tanggal Lahir</th>
-                  <th>BB Lahir</th>
+                  <th>Jenis Vaksin</th>
                   <th>Nama Ortu</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>Apdal Gilang Aditya</td>
+                  <td>M Ichsan</td>
                   <td>Laki-laki</td>
-                  <td>05-01-2017</td>
-                  <td>5000</td>
-                  <td>Sri Rahayu/Adi</td>
+                  <td>10-02-2021</td>
+                  <td>BCG</td>
+                  <td>Ichsan/Tina</td>
                   <td>
                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit">
                       Edit
@@ -153,39 +153,6 @@
                 </tr>
                 </tbody>
                  </thead>
-                <tbody>
-                <tr>
-                  <td>Varisha Raihanah</td>
-                  <td>Perempuan</td>
-                  <td>05-02-2017</td>
-                  <td>3300</td>
-                  <td>Patimah/A.Somad</td>
-                  <td>
-                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit">
-                      Edit
-                    </button>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">
-                      Hapus
-                    </button>
-                  </td>
-                </tr>
-                 </thead>
-                <tbody>
-                <tr>
-                  <td>A.Rahil</td>
-                  <td>Laki-laki</td>
-                  <td>09-03-2017</td>
-                  <td>3500</td>
-                  <td>Royni/Rustam</td>
-                  <td>
-                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit">
-                      Edit
-                    </button>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-hapus">
-                      Hapus
-                    </button>
-                  </td>
-                </tr>
               </table>
             </div>
             <!-- /.box-body -->
@@ -203,7 +170,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2021 <a href="https://adminlte.io">Elsi Yuni Dita</a>.</strong>
+    <strong>Copyright &copy; 2022 <a href="https://adminlte.io">Elsi Yuni Dita</a>.</strong>
   </footer>
 
   <!-- Add the sidebar's background. This div must be placed
@@ -237,8 +204,8 @@
                   <input type="number" class="form-control" name="TanggalLahir" placeholder="Enter Tanggal Lahir">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">BB Lahir</label>
-                  <input type="text" class="form-control" name="BBLahir" placeholder="Enter BB Lahir">
+                  <label for="exampleInputEmail1">Jenis Vaksin</label>
+                  <input type="text" class="form-control" name="JenisVaksin" placeholder="Enter Jenis Vaksin">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Orangtua</label>

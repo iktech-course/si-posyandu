@@ -40,7 +40,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Admin</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -54,8 +54,8 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Admin</span>
+             
+              <span class="hidden-xs">Elsi</span>
             </a>
           </li>
         </ul>
@@ -185,7 +185,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0.0
     </div>
-    <strong>Copyright &copy; 2021 <a href="https://adminlte.io">Elsi Yuni Dita</a>.</strong>
+    <strong>Copyright &copy; 2022 <a href="https://adminlte.io">Elsi Yuni Dita</a>.</strong>
   </footer>
 
   <!-- Add the sidebar's background. This div must be placed
@@ -204,27 +204,27 @@
               </div>
               <div class="modal-body">
                <!-- form start -->
-            <form action="" method="post">
+            <form action="input-data-ibu-hamil-proses.php" method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama</label>
-                  <input type="text" class="form-control" name="NamaB" placeholder="Enter Nama">
+                  <input type="text" class="form-control" name="Nama" placeholder="Enter Nama">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Tanggal Lahir</label>
-                  <input type="number" class="form-control" name="JenisTanggalLahir" placeholder="Enter Tanggal Lahir">
+                  <input type="date" class="form-control" name="Tanggal_lahir" placeholder="Enter Tanggal Lahir">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Alamat</label>
-                  <input type="number" class="form-control" name="Alamat" placeholder="Enter Alamat">
+                  <input type="text" class="form-control" name="Alamat" placeholder="Enter Alamat">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Suami</label>
-                  <input type="text" class="form-control" name="NamaSuami" placeholder="Enter Nama Suami">
+                  <input type="text" class="form-control" name="Nama_suami" placeholder="Enter Nama Suami">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">No Hp</label>
-                  <input type="text" class="form-control" name="NoHp" placeholder="Enter No Hp">
+                  <input type="text" class="form-control" name="No_hp" placeholder="Enter No Hp">
                 </div>
               </div>
               <!-- /.box-body -->

@@ -67,9 +67,9 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
+      <ul class="sidebar-menu" data-widget="">
         <li class="active treeview">
-          <a href="#">
+          <a class ="nav-link" href="index.php">
             <i class="fa fa-dashboard"></i> <span>Beranda</span>
           </a>
         </li>
@@ -156,10 +156,10 @@
                   <td><?= $data['nama_suami'] ?></td>
                   <td><?= $data['no_hp'] ?></td>
                   <td>
-                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit">
+                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit<?= $data['id'] ?>">
                       Edit
                     </button>
-                    <a href="hapus-data-bayi.php?id=<?php echo $data['id']?>" class="btn btn-danger">
+                    <a href="hapus-data-ibu-hamil.php?id=<?php echo $data['id']?>" class="btn btn-danger">
                       Hapus
                     </a>
                   </td>
@@ -172,8 +172,49 @@
                           <span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title">Edit Data Data Ibu Hamil</h4>
                       </div>
+                      <?php
+                            $id = $data['id'];
+                            $query_data = mysqli_query($koneksi, "SELECT * FROM data_ibu_hamil WHERE id = $id");
+                            $baris = mysqli_fetch_array($query_data);
 
-
+                          ?>
+                          <div class="modal-body">
+                          <!-- form start -->
+              <form action="edit-data-ibu-hamil.php" method="post">
+              <input type="hidden" name="id" value="<?= $baris['id']; ?>">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nama</label>
+                  <input type="text" class="form-control" name="nama" value="<?=  $baris['nama'] ?>">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Tanggal Lahir</label>
+                  <input type="date" class="form-control" name="tgl_lahir" value="<?=  $baris['tgl_lahir'] ?>">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Alamat</label>
+                  <input type="text" class="form-control" name="alamat" value="<?=  $baris['alamat'] ?>">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nama Suami</label>
+                  <input type="text" class="form-control" name="nama_suami" value="<?=  $baris['nama_suami'] ?>">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">No Hp</label>
+                  <input type="text" class="form-control" name="no_hp" value="<?=  $baris['no_hp'] ?>">
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
                 <?php
                 }
                 ?>
@@ -210,7 +251,7 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Form Pendaftaran Ibu Hamil</h4>
+                <h4 class="modal-title">Form Tambahkan Data Ibu Hamil</h4>
               </div>
               <div class="modal-body">
                <!-- form start -->
@@ -218,23 +259,23 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama</label>
-                  <input type="text" class="form-control" name="Nama" placeholder="Enter Nama">
+                  <input type="text" class="form-control" name="nama" placeholder="Enter Nama">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Tanggal Lahir</label>
-                  <input type="date" class="form-control" name="Tanggal_lahir" placeholder="Enter Tanggal Lahir">
+                  <input type="date" class="form-control" name="tgl_lahir" placeholder="Enter Tanggal Lahir">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Alamat</label>
-                  <input type="text" class="form-control" name="Alamat" placeholder="Enter Alamat">
+                  <input type="text" class="form-control" name="alamat" placeholder="Enter Alamat">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Suami</label>
-                  <input type="text" class="form-control" name="Nama_suami" placeholder="Enter Nama Suami">
+                  <input type="text" class="form-control" name="nama_suami" placeholder="Enter Nama Suami">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">No Hp</label>
-                  <input type="text" class="form-control" name="No_hp" placeholder="Enter No Hp">
+                  <input type="text" class="form-control" name="no_hp" placeholder="Enter No Hp">
                 </div>
               </div>
               <!-- /.box-body -->

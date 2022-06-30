@@ -1,5 +1,6 @@
 <?php
   include("koneksi.php");
+ 
 
   $query = mysqli_query($koneksi,"SELECT * FROM admin");
   $data = mysqli_fetch_array($query);
@@ -82,9 +83,9 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
+      <ul class="sidebar-menu" data-widget="">
         <li class="active treeview">
-          <a href="#">
+          <a href="index.php">
             <i class="fa fa-dashboard"></i> <span>Beranda</span>
           </a>
         </li>
@@ -108,8 +109,8 @@
             <i class="fa fa-map-marker"></i> <span>Laporan</span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="login.php">
+        <li class="">
+          <a href="logout.php">
             <i class="fa fa-user-times"></i> <span>Logout</span>
           </a>
         </li>
@@ -134,7 +135,7 @@
       <div class="row-lg-12">
         <div class="box box-info">
             <div class="box-body with-border">
-              <h1>Selamat Datang, <strong>Administrator</strong></h1>
+              <h1>Selamat Datang, <strong><?= $data['nama_lengkap']?></strong></h1>
               <h3>Di Aplikasi Pelayanan Posyandu Cempaka Putih</h3>
             </div>
             <!-- /.box-header -->

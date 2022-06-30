@@ -67,7 +67,7 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
+      <ul class="sidebar-menu" data-widget="">
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Beranda</span>
@@ -202,7 +202,7 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Form Pendaftaran Data Posyandu</h4>
+                <h4 class="modal-title">Form Tambahkan Data Posyandu</h4>
               </div>
               <div class="modal-body">
                <!-- form start -->
@@ -214,15 +214,15 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">BB</label>
-                  <input type="text" class="form-control" name="bb" placeholder="Enter BB">
+                  <input type="number" class="form-control" name="bb" placeholder="Enter BB">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">TB</label>
-                  <input type="text" class="form-control" name="tb" placeholder="Enter TB">
+                  <input type="number" class="form-control" name="tb" placeholder="Enter TB">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Jenis Vaksin</label>
-                  <input type="number" class="form-control" name="jenis_vaksin" placeholder="Enter Jenis Vaksin">
+                  <input type="text" class="form-control" name="jenis_vaksin" placeholder="Enter Jenis Vaksin">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Tanggal</label>

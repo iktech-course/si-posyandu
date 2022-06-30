@@ -67,9 +67,9 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
+      <ul class="sidebar-menu" data-widget="">
         <li class="active treeview">
-          <a href="#">
+          <a href="index.php">
             <i class="fa fa-dashboard"></i> <span>Beranda</span>
           </a>
         </li>
@@ -191,11 +191,12 @@
                           ?>
                           <div class="modal-body">
                           <!-- form start -->
-            <form action="input-data-bayi-proses.php" method="post">
+            <form action="edit-data-bayi.php" method="post">
+            <input type="hidden" name="id" value="<?= $baris['id']; ?>">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Bayi</label>
-                  <input type="text" class="form-control" name="nama_bayi" placeholder="Enter Nama Bayi">
+                  <input type="text" class="form-control" name="nama_bayi" value="<?=  $baris['nama_bayi'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Jenis Kelamin</label>
@@ -206,19 +207,19 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Tanggal Lahir</label>
-                  <input type="date" class="form-control" name="tanggal_lahir" placeholder="Enter Tanggal Lahir">
+                  <input type="date" class="form-control" name="tgl_lahir" value="<?=  $baris['tgl_lahir'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">BB Lahir</label>
-                  <input type="number" class="form-control" name="bb_lahir" placeholder="Enter BB Lahir">
+                  <input type="number" class="form-control" name="bb_lahir" value="<?=  $baris['bb_lahir'] ?>">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">TB Lahir</label>
-                  <input type="number" class="form-control" name="tb_lahir" placeholder="Enter TB Lahir">
+                  <input type="number" class="form-control" name="tb_lahir" value="<?=  $baris['tb_lahir'] ?>">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Nama Orangtua</label>
-                  <input type="text" class="form-control" name="nama_ortu" placeholder="Enter Nama Orangtua">
+                  <label for="exampleInputEmail1">Nama Ortu</label>
+                  <input type="text" class="form-control" name="nama_ortu" value="<?=  $baris['nama_ortu'] ?>">
                 </div>
               </div>
               <!-- /.box-body -->
@@ -268,7 +269,7 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Form Pendaftaran Bayi</h4>
+                <h4 class="modal-title">Form Tambahkan Data Bayi</h4>
               </div>
               <div class="modal-body">
                <!-- form start -->
@@ -298,7 +299,7 @@
                   <input type="number" class="form-control" name="tb_lahir" placeholder="Enter TB Lahir">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Nama Orangtua</label>
+                  <label for="exampleInputEmail1">Nama Ortu</label>
                   <input type="text" class="form-control" name="nama_ortu" placeholder="Enter Nama Orangtua">
                 </div>
               </div>

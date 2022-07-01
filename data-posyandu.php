@@ -126,11 +126,11 @@
             <div class="box-body">
               <table id="example2" class="table table-bordered table-striped">
                 <?php
-                  include 'koneksi.php';
+                include 'koneksi.php';
 
-                  $sql = "SELECT * FROM data_posyandu";
-                  $query = mysqli_query($koneksi, $sql);
-                  $no = 0
+                $sql = "SELECT * FROM data_posyandu";
+                $query = mysqli_query($koneksi, $sql);
+                $no = 0;
                 ?>
                 <thead>
                 <tr>

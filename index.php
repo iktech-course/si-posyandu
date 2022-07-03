@@ -54,9 +54,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b></b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b></span>
+      <span class="logo-lg"><b>SI-Posyandu</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -70,8 +70,8 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="glyphicon glyphicon-user"></i>
-              <span class="hidden-xs">Elsi</span>
+              
+            
             </a>
           </li>
         </ul>
@@ -135,7 +135,7 @@
       <div class="row-lg-12">
         <div class="box box-info">
             <div class="box-body with-border">
-              <h1>Selamat Datang, <strong><?= $data['nama_lengkap']?></strong></h1>
+              <h2>Selamat Datang, <strong>Admin</strong></h2>
               <h3>Di Aplikasi Pelayanan Posyandu Cempaka Putih</h3>
             </div>
             <!-- /.box-header -->
@@ -147,7 +147,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>11</h3>
+              <h3>5</h3>
 
               <p>Data Bayi</p>
             </div>
@@ -162,7 +162,7 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>1234</h3>
+              <h3>4</h3>
 
               <p>Data Ibu Hamil</p>
             </div>

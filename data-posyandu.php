@@ -56,7 +56,7 @@
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-                
+
               </a>
             </li>
           </ul>
@@ -129,7 +129,7 @@
                   <?php
                   include 'koneksi.php';
 
-                  $sql = "SELECT data_posyandu.id, data_bayi.nama_bayi, data_posyandu.bb, data_posyandu.tb, data_posyandu.jenis_vaksin, data_posyandu.tgl, data_posyandu.keterangan FROM data_posyandu INNER JOIN data_bayi ON data_posyandu.id_bayi = data_bayi.id";
+                  $sql = "SELECT data_posyandu.id, data_posyandu.id_bayi, data_bayi.nama_bayi, data_posyandu.bb, data_posyandu.tb, data_posyandu.jenis_vaksin, data_posyandu.tgl, data_posyandu.keterangan FROM data_posyandu INNER JOIN data_bayi ON data_posyandu.id_bayi = data_bayi.id";
                   $query = mysqli_query($koneksi, $sql);
                   $no = 0
                   ?>
@@ -191,15 +191,16 @@
                                   <input type="date" class="form-control" name="tanggal" value="<?= $baris['tanggal'] ?>">
                                 </div>
                                 <div class="form-group">
-                                  <label for="exampleInputEmail1">Nama Bayi</label>
-                                  <input type="text" class="form-control" name="nama_bayi" value="<?= $baris['nama_bayi'] ?>">
-                                  <option value="">Pilih Nama Bayi</option>
-                                <?php
-                                 include("koneksi.php");
-                                  $query_nama = mysqli_query($koneksi, "SELECT id, nama_bayi FROM data_bayi");
-                                  while ($res = mysqli_fetch_array($query_nama)) { ?>
-                                    <option value="<?= $res['id'] ?>"><?= $res['nama_bayi'] ?></option>
-                                   <?php } ?>
+                                  <label for="exampleSelectRounded0">Nama Bayi</label>
+                                  <select class="form-control custom-select rounded-0" id="exampleSelectRounded0" name="nama_bayi">
+                                    <option value="">Pilih Nama Bayi</option>
+                                    <?php
+                                    include("koneksi.php");
+                                    $query_nama = mysqli_query($koneksi, "SELECT id, nama_bayi FROM data_bayi");
+                                    while ($res = mysqli_fetch_array($query_nama)) { ?>
+                                      <option value="<?= $res['id'] ?>" <?php if ($res['id'] == $data['id_bayi']) echo "selected"?>><?= $res['nama_bayi'] ?></option>
+                                    <?php } ?>
+                                  </select>
                                 </div>
                                 <div class="form-group">
                                   <label for="exampleInputEmail1">Berat Badan (Gram)</label>

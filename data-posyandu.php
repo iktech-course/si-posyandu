@@ -188,7 +188,7 @@
                               <div class="box-body">
                                 <div class="form-group">
                                   <label for="exampleInputEmail1">Tanggal Posyandu</label>
-                                  <input type="date" class="form-control" name="tanggal" value="<?= $baris['tanggal'] ?>">
+                                  <input type="date" class="form-control" name="tanggal" data-date-format="yyyy/mm/dd" value="<?= $baris['tgl'] ?>">
                                 </div>
                                 <div class="form-group">
                                   <label for="exampleSelectRounded0">Nama Bayi</label>

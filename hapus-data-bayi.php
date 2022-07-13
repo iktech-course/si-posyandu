@@ -15,6 +15,6 @@
 	else
 	{
 		echo "Data Gagal Terhapus";
-		mysqli_error($query);
+		mysqli_error($koneksi);
 	}
 ?>

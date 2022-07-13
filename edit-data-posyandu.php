@@ -8,11 +8,7 @@
     $jenis_vaksin = $_POST['jenis_vaksin'];
     $keterangan = $_POST['keterangan'];
 
-    $sql = "UPDATE data_posyandu (id_bayi, bb, tb, jenis_vaksin, tgl, keterangan ) SET (
-        '$nama_bayi','$bb','$tb','$jenis_vaksin', '$tanggal','$keterangan')";
-     echo($sql . "<br>");
- 
-     $query = mysqli_query($koneksi, $sql);
+	$query = mysqli_query($koneksi, "UPDATE data_posyandu set tanggal='$tanggal', nama_bayi='$nama_bayi', bb='$bb', tb='$tb', jenis_vaksin='$jenis_vaksin', keterangan='$keterangan' WHERE id ='$id'");
 	
 
 	if($query)

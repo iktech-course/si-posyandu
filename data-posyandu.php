@@ -266,7 +266,7 @@
               </div>
               <div class="form-group">
                 <label for="exampleSelectRounded0">Nama Bayi</label>
-                <select class="form-control custom-select rounded-0" id="exampleSelectRounded0" name="nama">
+                <select class="form-control custom-select rounded-0" id="exampleSelectRounded0" name="nama_bayi">
                   <option value="">Pilih Nama Bayi</option>
                   <?php
                   include("koneksi.php");

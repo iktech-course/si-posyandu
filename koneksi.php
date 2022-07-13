@@ -2,7 +2,7 @@
 	$host = "localhost";
 	$username = "root";
 	$password = "";
-	$database = "si_posyandu";
+	$database = "db_si_posyandu";
 
 	$koneksi = mysqli_connect($host,$username,$password,$database);
 

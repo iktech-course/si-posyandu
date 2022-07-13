@@ -162,7 +162,7 @@
                           <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-edit<?= $data['id'] ?>">
                             Edit
                           </button>
-                          <a href="hapus-data-ibu-hamil.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">
+                          <a href="hapus-data-posyandu.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">
                             Hapus
                           </a>
                         </td>
@@ -173,38 +173,49 @@
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Edit Data Data Ibu Hamil</h4>
+                            <h4 class="modal-title">Edit Data Data Posyandu</h4>
                           </div>
                           <?php
                           $id = $data['id'];
-                          $query_data = mysqli_query($koneksi, "SELECT * FROM data_ibu_hamil WHERE id = $id");
+                          $query_data = mysqli_query($koneksi, "SELECT * FROM data_posyandu WHERE id = $id");
                           $baris = mysqli_fetch_array($query_data);
 
                           ?>
                           <div class="modal-body">
                             <!-- form start -->
-                            <form action="edit-data-ibu-hamil.php" method="post">
+                            <form action="edit-data-posyandu.php" method="post">
                               <input type="hidden" name="id" value="<?= $baris['id']; ?>">
                               <div class="box-body">
                                 <div class="form-group">
-                                  <label for="exampleInputEmail1">Bayi</label>
-                                  <input type="text" class="form-control" name="nama" value="<?= $baris['nama'] ?>">
+                                  <label for="exampleInputEmail1">Tanggal Posyandu</label>
+                                  <input type="date" class="form-control" name="tanggal" value="<?= $baris['tanggal'] ?>">
                                 </div>
                                 <div class="form-group">
-                                  <label for="exampleInputEmail1">Tanggal Lahir</label>
-                                  <input type="date" class="form-control" name="tgl_lahir" value="<?= $baris['tgl_lahir'] ?>">
+                                  <label for="exampleInputEmail1">Nama Bayi</label>
+                                  <input type="text" class="form-control" name="nama_bayi" value="<?= $baris['nama_bayi'] ?>">
+                                  <option value="">Pilih Nama Bayi</option>
+                                <?php
+                                 include("koneksi.php");
+                                  $query_nama = mysqli_query($koneksi, "SELECT id, nama_bayi FROM data_bayi");
+                                  while ($res = mysqli_fetch_array($query_nama)) { ?>
+                                    <option value="<?= $res['id'] ?>"><?= $res['nama_bayi'] ?></option>
+                                   <?php } ?>
                                 </div>
                                 <div class="form-group">
-                                  <label for="exampleInputEmail1">Alamat</label>
-                                  <input type="text" class="form-control" name="alamat" value="<?= $baris['alamat'] ?>">
+                                  <label for="exampleInputEmail1">Berat Badan (Gram)</label>
+                                  <input type="text" class="form-control" name="bb" value="<?= $baris['bb'] ?>">
                                 </div>
                                 <div class="form-group">
-                                  <label for="exampleInputEmail1">Nama Suami</label>
-                                  <input type="text" class="form-control" name="nama_suami" value="<?= $baris['nama_suami'] ?>">
+                                  <label for="exampleInputEmail1">Tinggi Badan (Cm)</label>
+                                  <input type="text" class="form-control" name="tb" value="<?= $baris['tb'] ?>">
                                 </div>
                                 <div class="form-group">
-                                  <label for="exampleInputEmail1">No Hp</label>
-                                  <input type="text" class="form-control" name="no_hp" value="<?= $baris['no_hp'] ?>">
+                                  <label for="exampleInputEmail1">Jenis Vaksin</label>
+                                  <input type="text" class="form-control" name="jenis_vaksin" value="<?= $baris['jenis_vaksin'] ?>">
+                                </div>
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">Keterangan</label>
+                                  <input type="text" class="form-control" name="keterangan" value="<?= $baris['keterangan'] ?>">
                                 </div>
                               </div>
                               <!-- /.box-body -->

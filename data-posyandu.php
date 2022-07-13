@@ -90,11 +90,6 @@
             </a>
           </li>
           <li class="treeview">
-            <a href="laporan.php">
-              <i class="fa fa-map-marker"></i> <span>Laporan</span>
-            </a>
-          </li>
-          <li class="treeview">
             <a href="login.php">
               <i class="fa fa-user-times"></i> <span>Logout</span>
             </a>

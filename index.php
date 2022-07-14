@@ -103,12 +103,7 @@
           <a href="data-posyandu.php">
             <i class="fa fa-map-o"></i> <span>Data Posyandu</span>
           </a>
-        </li>
-        <li class="treeview">
-            <a href="#laporan.php">
-            <i class="fa fa-map-marker"></i> <span>Laporan</span>
-          </a>
-        </li>
+        </li> 
         <li class="">
           <a href="logout.php">
             <i class="fa fa-user-times"></i> <span>Logout</span>

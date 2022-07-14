@@ -61,7 +61,7 @@
         </ul>
       </div>
     </nav>
-  </header>
+  </header>   
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -75,7 +75,7 @@
         </li>
         <li class="treeview">
           <a href="data-bayi.php">
-            <i class="fa fa-map-o"></i> <span>Data Bayi</span>
+            <i class="fa fa-map-o"></i> <span>Data Bayi</ span>
           </a>
         </li>
         <li class="treeview">

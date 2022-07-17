@@ -22,15 +22,14 @@
                 <th>Tinggi Badan (Cm)</th>
                 <th>Jenis Vaksin</th>
                 <th>Keterangan</th>
-                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
             <!--Jangan Dihapus-->
             <?php
                 include 'koneksi.php';
-
-                $query = mysqli_query($koneksi,"SELECT * FROM data_posyandu");
+                $sql = "SELECT data_posyandu.id, data_posyandu.id_bayi, data_bayi.nama_bayi, data_posyandu.bb, data_posyandu.tb, data_posyandu.jenis_vaksin, data_posyandu.tgl, data_posyandu.keterangan FROM data_posyandu INNER JOIN data_bayi ON data_posyandu.id_bayi = data_bayi.id";
+                $query = mysqli_query($koneksi,$sql);
                 $no = 0;
                 while($data = mysqli_fetch_array($query))
                 {
